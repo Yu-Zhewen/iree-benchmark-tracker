@@ -122,7 +122,7 @@ def collect_data_from_artifacts(
         sort_and_trim_history(repo, history_data, max_commits)
         history_json_path = get_history_file_path(output_dir, artifact_name)
         with open(history_json_path, "w") as f:
-            json.dump(history_data, f)
+            json.dump(history_data, f, indent=2)
         history_files.append(history_json_path)
 
     return history_files
