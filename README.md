@@ -6,9 +6,11 @@ This repository collects performance benchmark data from IREE CI workflows and g
 
 This repository runs a nightly GitHub Actions workflow that:
 1. Collects performance artifacts from IREE CI workflows
-2. Stores historical data per artifact with commit information
+2. Stores historical data per artifact with commit information in the `data/` directory
 3. Generates interactive HTML graphs using Chart.js
 4. Publishes the graphs to the `gh-pages` branch for web hosting
+
+The published graphs are available at: `https://YOUR-ORG.github.io/iree-benchmark-tracker/data/`
 
 ## Test Locally
 

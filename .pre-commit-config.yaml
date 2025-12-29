@@ -24,4 +24,3 @@ repos:
         language: system
         types: [python]
         args: ['--line-length=100']
-

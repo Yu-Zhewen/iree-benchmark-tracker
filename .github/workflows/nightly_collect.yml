@@ -38,10 +38,31 @@ jobs:
           python -m pip install --upgrade pip
           pip install pygithub requests
 
-      - name: Collect performance data and generate HTML
+      - name: Setup gh-pages branch and collect data
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Copy scripts before switching branches (similar to IREE's approach).
+          # This ensures we have access to the collection scripts after checking out gh-pages.
+          cp -r scripts /tmp/scripts
+
+          # Fetch and checkout gh-pages branch to access existing history.
+          # This allows the collection script to read existing *_history.json files.
+          if git ls-remote --heads origin gh-pages | grep -q gh-pages; then
+            git fetch origin gh-pages:gh-pages
+            git checkout gh-pages
+          else
+            git checkout --orphan gh-pages
+            git rm -rf . || true
+            # Create initial commit.
+            echo "# IREE Benchmark Tracker" > README.md
+            git add README.md
+            git commit -m "Initial gh-pages commit"
+          fi
+
           # Collect data from the last 2 days to provide a buffer for:
           # - Workflows that complete late or take longer than expected
           # - Timezone differences between workflow completion and collection time
@@ -56,7 +77,10 @@ jobs:
           # torch_models_cpu_task_summary.json, torch_models_amdgpu_mi325_summary.json)
           # Alternatively, check a recent workflow run's artifacts section:
           # https://github.com/iree-org/iree/actions/workflows/PkgCI.yml
-          python scripts/collect.py \
+          #
+          # Note: output-dir is set to ./data to keep all data files organized in a directory.
+          # The script will read existing history files from data/ and write new ones there.
+          python /tmp/scripts/collect.py \
             --repo-name "iree-org/iree" \
             --branch main \
             --workflow "PkgCI" \
@@ -64,31 +88,12 @@ jobs:
             --days-back 2 \
             --target-artifacts "torch_models_cpu_task_summary.json" "torch_models_amdgpu_mi325_summary.json"
 
-      - name: Setup gh-pages branch
+      - name: Commit and push updates
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Add HTML and JSON history files from the data directory.
+          git add data/*_history.html data/*_history.json || true
 
-          # Checkout or create gh-pages branch
-          if git ls-remote --heads origin gh-pages | grep -q gh-pages; then
-            git fetch origin gh-pages:gh-pages
-            git checkout gh-pages
-          else
-            git checkout --orphan gh-pages
-            git rm -rf . || true
-            # Create initial commit
-            echo "# IREE Benchmark Tracker" > README.md
-            git add README.md
-            git commit -m "Initial gh-pages commit"
-          fi
-
-      - name: Update gh-pages with new content
-        run: |
-          # Copy HTML files from data directory to root
-          cp data/*.html . || true
-
-          # Commit and push
-          git add .
+          # Commit and push.
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
