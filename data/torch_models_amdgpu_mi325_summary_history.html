@@ -1,0 +1,447 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Benchmark Tracker</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+            .chart-container { width: 80%; margin: 30px auto; }
+            canvas { width: 100%; height: auto; }
+        </style>
+    </head>
+    <body>
+        <h1>Benchmark Tracker</h1>
+    
+        <div class="chart-container">
+            <h2>decode_benchmark_seq128_mi325</h2>
+            <canvas id="chart-decode_benchmark_seq128_mi325"></canvas>
+        </div>
+        <script>
+            const ctx_decode_benchmark_seq128_mi325 = document.getElementById('chart-decode_benchmark_seq128_mi325')
+            const chart_decode_benchmark_seq128_mi325 = new Chart(ctx_decode_benchmark_seq128_mi325, {
+                type: 'line',
+                data: {
+                    labels: ['af62475', '085a594', '8d88f04', '1c4aa2b'],  // Truncated commit hashes as X-axis labels
+                    datasets: [{
+                        label: 'Time (ms)',
+                        data: ['7.229', '6.669', '6.910', '6.666'],   // Test time as Y-axis
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Commit Hash'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,  // Ensures the Y-axis starts at 0
+                            title: {
+                                display: true,
+                                text: 'Time (ms)'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        
+        <div class="chart-container">
+            <h2>decode_benchmark_seq2048_mi325</h2>
+            <canvas id="chart-decode_benchmark_seq2048_mi325"></canvas>
+        </div>
+        <script>
+            const ctx_decode_benchmark_seq2048_mi325 = document.getElementById('chart-decode_benchmark_seq2048_mi325')
+            const chart_decode_benchmark_seq2048_mi325 = new Chart(ctx_decode_benchmark_seq2048_mi325, {
+                type: 'line',
+                data: {
+                    labels: ['af62475', '085a594', '8d88f04', '1c4aa2b'],  // Truncated commit hashes as X-axis labels
+                    datasets: [{
+                        label: 'Time (ms)',
+                        data: ['10.057', '8.078', '8.354', '8.125'],   // Test time as Y-axis
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Commit Hash'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,  // Ensures the Y-axis starts at 0
+                            title: {
+                                display: true,
+                                text: 'Time (ms)'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        
+        <div class="chart-container">
+            <h2>prefill_benchmark_seq128_mi325</h2>
+            <canvas id="chart-prefill_benchmark_seq128_mi325"></canvas>
+        </div>
+        <script>
+            const ctx_prefill_benchmark_seq128_mi325 = document.getElementById('chart-prefill_benchmark_seq128_mi325')
+            const chart_prefill_benchmark_seq128_mi325 = new Chart(ctx_prefill_benchmark_seq128_mi325, {
+                type: 'line',
+                data: {
+                    labels: ['af62475', '085a594', '8d88f04', '1c4aa2b'],  // Truncated commit hashes as X-axis labels
+                    datasets: [{
+                        label: 'Time (ms)',
+                        data: ['24.008', '24.018', '24.138', '23.888'],   // Test time as Y-axis
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Commit Hash'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,  // Ensures the Y-axis starts at 0
+                            title: {
+                                display: true,
+                                text: 'Time (ms)'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        
+        <div class="chart-container">
+            <h2>prefill_benchmark_seq2048_mi325</h2>
+            <canvas id="chart-prefill_benchmark_seq2048_mi325"></canvas>
+        </div>
+        <script>
+            const ctx_prefill_benchmark_seq2048_mi325 = document.getElementById('chart-prefill_benchmark_seq2048_mi325')
+            const chart_prefill_benchmark_seq2048_mi325 = new Chart(ctx_prefill_benchmark_seq2048_mi325, {
+                type: 'line',
+                data: {
+                    labels: ['af62475', '085a594', '8d88f04', '1c4aa2b'],  // Truncated commit hashes as X-axis labels
+                    datasets: [{
+                        label: 'Time (ms)',
+                        data: ['160.104', '162.740', '163.712', '160.338'],   // Test time as Y-axis
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Commit Hash'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,  // Ensures the Y-axis starts at 0
+                            title: {
+                                display: true,
+                                text: 'Time (ms)'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        
+        <div class="chart-container">
+            <h2>decode_benchmark_seq128_mi325_data_tiling</h2>
+            <canvas id="chart-decode_benchmark_seq128_mi325_data_tiling"></canvas>
+        </div>
+        <script>
+            const ctx_decode_benchmark_seq128_mi325_data_tiling = document.getElementById('chart-decode_benchmark_seq128_mi325_data_tiling')
+            const chart_decode_benchmark_seq128_mi325_data_tiling = new Chart(ctx_decode_benchmark_seq128_mi325_data_tiling, {
+                type: 'line',
+                data: {
+                    labels: ['af62475', '085a594', '8d88f04', '1c4aa2b'],  // Truncated commit hashes as X-axis labels
+                    datasets: [{
+                        label: 'Time (ms)',
+                        data: ['17.253', '16.708', '16.922', '16.802'],   // Test time as Y-axis
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Commit Hash'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,  // Ensures the Y-axis starts at 0
+                            title: {
+                                display: true,
+                                text: 'Time (ms)'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        
+        <div class="chart-container">
+            <h2>decode_benchmark_seq2048_mi325_data_tiling</h2>
+            <canvas id="chart-decode_benchmark_seq2048_mi325_data_tiling"></canvas>
+        </div>
+        <script>
+            const ctx_decode_benchmark_seq2048_mi325_data_tiling = document.getElementById('chart-decode_benchmark_seq2048_mi325_data_tiling')
+            const chart_decode_benchmark_seq2048_mi325_data_tiling = new Chart(ctx_decode_benchmark_seq2048_mi325_data_tiling, {
+                type: 'line',
+                data: {
+                    labels: ['af62475', '085a594', '8d88f04', '1c4aa2b'],  // Truncated commit hashes as X-axis labels
+                    datasets: [{
+                        label: 'Time (ms)',
+                        data: ['20.212', '18.502', '18.537', '18.457'],   // Test time as Y-axis
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Commit Hash'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,  // Ensures the Y-axis starts at 0
+                            title: {
+                                display: true,
+                                text: 'Time (ms)'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        
+        <div class="chart-container">
+            <h2>prefill_benchmark_seq128_mi325_data_tiling</h2>
+            <canvas id="chart-prefill_benchmark_seq128_mi325_data_tiling"></canvas>
+        </div>
+        <script>
+            const ctx_prefill_benchmark_seq128_mi325_data_tiling = document.getElementById('chart-prefill_benchmark_seq128_mi325_data_tiling')
+            const chart_prefill_benchmark_seq128_mi325_data_tiling = new Chart(ctx_prefill_benchmark_seq128_mi325_data_tiling, {
+                type: 'line',
+                data: {
+                    labels: ['af62475', '085a594', '8d88f04', '1c4aa2b'],  // Truncated commit hashes as X-axis labels
+                    datasets: [{
+                        label: 'Time (ms)',
+                        data: ['24.768', '24.738', '24.902', '24.667'],   // Test time as Y-axis
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Commit Hash'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,  // Ensures the Y-axis starts at 0
+                            title: {
+                                display: true,
+                                text: 'Time (ms)'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        
+        <div class="chart-container">
+            <h2>prefill_benchmark_seq2048_mi325_data_tiling</h2>
+            <canvas id="chart-prefill_benchmark_seq2048_mi325_data_tiling"></canvas>
+        </div>
+        <script>
+            const ctx_prefill_benchmark_seq2048_mi325_data_tiling = document.getElementById('chart-prefill_benchmark_seq2048_mi325_data_tiling')
+            const chart_prefill_benchmark_seq2048_mi325_data_tiling = new Chart(ctx_prefill_benchmark_seq2048_mi325_data_tiling, {
+                type: 'line',
+                data: {
+                    labels: ['af62475', '085a594', '8d88f04', '1c4aa2b'],  // Truncated commit hashes as X-axis labels
+                    datasets: [{
+                        label: 'Time (ms)',
+                        data: ['170.277', '173.036', '172.832', '168.064'],   // Test time as Y-axis
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Commit Hash'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,  // Ensures the Y-axis starts at 0
+                            title: {
+                                display: true,
+                                text: 'Time (ms)'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        
+        <div class="chart-container">
+            <h2>clip_benchmark_mi325</h2>
+            <canvas id="chart-clip_benchmark_mi325"></canvas>
+        </div>
+        <script>
+            const ctx_clip_benchmark_mi325 = document.getElementById('chart-clip_benchmark_mi325')
+            const chart_clip_benchmark_mi325 = new Chart(ctx_clip_benchmark_mi325, {
+                type: 'line',
+                data: {
+                    labels: ['af62475', '085a594', '8d88f04', '1c4aa2b'],  // Truncated commit hashes as X-axis labels
+                    datasets: [{
+                        label: 'Time (ms)',
+                        data: ['7.243', '7.230', '7.285', '7.235'],   // Test time as Y-axis
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Commit Hash'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,  // Ensures the Y-axis starts at 0
+                            title: {
+                                display: true,
+                                text: 'Time (ms)'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        
+        <div class="chart-container">
+            <h2>punet_benchmark_mi325</h2>
+            <canvas id="chart-punet_benchmark_mi325"></canvas>
+        </div>
+        <script>
+            const ctx_punet_benchmark_mi325 = document.getElementById('chart-punet_benchmark_mi325')
+            const chart_punet_benchmark_mi325 = new Chart(ctx_punet_benchmark_mi325, {
+                type: 'line',
+                data: {
+                    labels: ['af62475', '085a594', '8d88f04', '1c4aa2b'],  // Truncated commit hashes as X-axis labels
+                    datasets: [{
+                        label: 'Time (ms)',
+                        data: ['41.821', '42.200', '42.511', '41.735'],   // Test time as Y-axis
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Commit Hash'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,  // Ensures the Y-axis starts at 0
+                            title: {
+                                display: true,
+                                text: 'Time (ms)'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        
+        <div class="chart-container">
+            <h2>punet_benchmark_mi325_v2</h2>
+            <canvas id="chart-punet_benchmark_mi325_v2"></canvas>
+        </div>
+        <script>
+            const ctx_punet_benchmark_mi325_v2 = document.getElementById('chart-punet_benchmark_mi325_v2')
+            const chart_punet_benchmark_mi325_v2 = new Chart(ctx_punet_benchmark_mi325_v2, {
+                type: 'line',
+                data: {
+                    labels: ['af62475', '085a594', '8d88f04', '1c4aa2b'],  // Truncated commit hashes as X-axis labels
+                    datasets: [{
+                        label: 'Time (ms)',
+                        data: ['40.306', '40.625', '40.836', '40.260'],   // Test time as Y-axis
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Commit Hash'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,  // Ensures the Y-axis starts at 0
+                            title: {
+                                display: true,
+                                text: 'Time (ms)'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        
+    </body>
+    </html>
+    
