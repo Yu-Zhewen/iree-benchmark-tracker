@@ -1,0 +1,97 @@
+# Copyright 2025 The IREE Authors
+#
+# Licensed under the Apache License v2.0 with LLVM Exceptions.
+# See https://llvm.org/LICENSE.txt for license information.
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+
+name: Nightly Performance Data Collection
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  collect_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548 # v6.1.0
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pygithub requests
+
+      - name: Collect performance data and generate HTML
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Collect data from the last 2 days to provide a buffer for:
+          # - Workflows that complete late or take longer than expected
+          # - Timezone differences between workflow completion and collection time
+          # - Automatic catch-up if the previous nightly run failed
+          # The script automatically skips commits that have already been processed,
+          # so overlapping days won't create duplicate entries.
+          #
+          # To find available artifact names, check how IREE sets up workflow artifacts:
+          # The artifacts are uploaded in the IREE workflow definition. See the upload-artifact step:
+          # https://github.com/iree-org/iree/blob/1c4aa2bb90aaf985738e579b2ea063355b0dca5c/.github/workflows/pkgci_test_torch.yml#L179
+          # The artifact names are defined by the matrix.summary-file variable (e.g.,
+          # torch_models_cpu_task_summary.json, torch_models_amdgpu_mi325_summary.json)
+          # Alternatively, check a recent workflow run's artifacts section:
+          # https://github.com/iree-org/iree/actions/workflows/PkgCI.yml
+          python scripts/collect.py \
+            --repo-name "iree-org/iree" \
+            --branch main \
+            --workflow "PkgCI" \
+            --output-dir ./data \
+            --days-back 2 \
+            --target-artifacts "torch_models_cpu_task_summary.json" "torch_models_amdgpu_mi325_summary.json"
+
+      - name: Setup gh-pages branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Checkout or create gh-pages branch
+          if git ls-remote --heads origin gh-pages | grep -q gh-pages; then
+            git fetch origin gh-pages:gh-pages
+            git checkout gh-pages
+          else
+            git checkout --orphan gh-pages
+            git rm -rf . || true
+            # Create initial commit
+            echo "# IREE Benchmark Tracker" > README.md
+            git add README.md
+            git commit -m "Initial gh-pages commit"
+          fi
+
+      - name: Update gh-pages with new content
+        run: |
+          # Copy HTML files from data directory to root
+          cp data/*.html . || true
+
+          # Commit and push
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update performance graphs"
+            git push origin gh-pages
+          fi
