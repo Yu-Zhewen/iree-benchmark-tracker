@@ -10,7 +10,11 @@ This repository runs a nightly GitHub Actions workflow that:
 3. Generates interactive HTML graphs using Chart.js
 4. Publishes the graphs to the `gh-pages` branch for web hosting
 
-The published graphs are available at: `https://YOUR-ORG.github.io/iree-benchmark-tracker/data/`
+The published graphs are available at:
+
+`https://Yu-Zhewen.github.io/iree-benchmark-tracker/data/torch_models_amdgpu_mi325_summary_history.html`
+
+`https://Yu-Zhewen.github.io/iree-benchmark-tracker/data/torch_models_cpu_task_summary_history.html`
 
 ## Test Locally
 
@@ -19,13 +23,12 @@ To test the benchmark tracker locally:
 1. **Set up the environment:**
    ```bash
    # Clone the repository
-   git clone https://github.com/YOUR-ORG/iree-benchmark-tracker.git
+   git clone https://github.com/Yu-Zhewen/iree-benchmark-tracker.git
    cd iree-benchmark-tracker
 
    # Create and activate a virtual environment
    python -m venv .venv
-   source .venv/bin/activate  # On Windows: venv\Scripts\activate
-
+   source .venv/bin/activate
    # Install dependencies
    pip install -r ./scripts/requirements.txt
    ```
