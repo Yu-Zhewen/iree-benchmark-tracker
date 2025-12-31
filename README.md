@@ -12,9 +12,9 @@ This repository runs a nightly GitHub Actions workflow that:
 
 The published graphs are available at:
 
-`https://Yu-Zhewen.github.io/iree-benchmark-tracker/data/torch_models_amdgpu_mi325_summary_history.html`
+<https://Yu-Zhewen.github.io/iree-benchmark-tracker/data/torch_models_amdgpu_mi325_summary_history.html>
 
-`https://Yu-Zhewen.github.io/iree-benchmark-tracker/data/torch_models_cpu_task_summary_history.html`
+<https://Yu-Zhewen.github.io/iree-benchmark-tracker/data/torch_models_cpu_task_summary_history.html>
 
 ## Test Locally
 
