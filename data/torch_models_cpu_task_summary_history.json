@@ -688,5 +688,25 @@
         "time": "158.080"
       }
     ]
+  },
+  {
+    "commit_hash": "e8510eaa",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "157.896"
+      }
+    ]
+  },
+  {
+    "commit_hash": "4bb9b711",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "154.140"
+      }
+    ]
   }
 ]
