@@ -1248,5 +1248,125 @@
         "time": "153.470"
       }
     ]
+  },
+  {
+    "commit_hash": "dea53d66",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "154.125"
+      }
+    ]
+  },
+  {
+    "commit_hash": "a9a7b41c",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "157.762"
+      }
+    ]
+  },
+  {
+    "commit_hash": "c9257431",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "157.845"
+      }
+    ]
+  },
+  {
+    "commit_hash": "4b0d9fae",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "153.915"
+      }
+    ]
+  },
+  {
+    "commit_hash": "f6fdbd58",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "157.644"
+      }
+    ]
+  },
+  {
+    "commit_hash": "fe3dee80",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "157.568"
+      }
+    ]
+  },
+  {
+    "commit_hash": "4745c4fe",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "157.628"
+      }
+    ]
+  },
+  {
+    "commit_hash": "21867c3b",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "157.893"
+      }
+    ]
+  },
+  {
+    "commit_hash": "fe71aa9c",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "157.244"
+      }
+    ]
+  },
+  {
+    "commit_hash": "7e23975d",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "153.861"
+      }
+    ]
+  },
+  {
+    "commit_hash": "58778326",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "157.648"
+      }
+    ]
+  },
+  {
+    "commit_hash": "638a3859",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "157.863"
+      }
+    ]
   }
 ]
