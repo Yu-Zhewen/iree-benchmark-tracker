@@ -1,15 +1,5 @@
 [
   {
-    "commit_hash": "e292bb21",
-    "time_unit": "ms",
-    "tests": [
-      {
-        "name": "clip_benchmark_cpu",
-        "time": "153.540"
-      }
-    ]
-  },
-  {
     "commit_hash": "6c50bfde",
     "time_unit": "ms",
     "tests": [
@@ -1996,6 +1986,16 @@
       {
         "name": "clip_benchmark_cpu",
         "time": "162.138"
+      }
+    ]
+  },
+  {
+    "commit_hash": "a852a427",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "162.414"
       }
     ]
   }
