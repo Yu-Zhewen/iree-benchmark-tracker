@@ -1,75 +1,5 @@
 [
   {
-    "commit_hash": "4f6cd987",
-    "time_unit": "ms",
-    "tests": [
-      {
-        "name": "decode_benchmark_seq128_mi325",
-        "time": "5.948"
-      },
-      {
-        "name": "decode_benchmark_seq2048_mi325",
-        "time": "7.392"
-      },
-      {
-        "name": "prefill_benchmark_seq128_mi325",
-        "time": "29.418"
-      },
-      {
-        "name": "prefill_benchmark_seq2048_mi325",
-        "time": "252.715"
-      },
-      {
-        "name": "decode_benchmark_seq128_mi325",
-        "time": "6.790"
-      },
-      {
-        "name": "decode_benchmark_seq128_mi325_data_tiling",
-        "time": "15.826"
-      },
-      {
-        "name": "decode_benchmark_seq2048_mi325",
-        "time": "9.651"
-      },
-      {
-        "name": "decode_benchmark_seq2048_mi325_data_tiling",
-        "time": "18.730"
-      },
-      {
-        "name": "prefill_benchmark_seq128_mi325",
-        "time": "24.023"
-      },
-      {
-        "name": "prefill_benchmark_seq128_mi325_data_tiling",
-        "time": "23.232"
-      },
-      {
-        "name": "prefill_benchmark_seq2048_mi325",
-        "time": "158.106"
-      },
-      {
-        "name": "prefill_benchmark_seq2048_mi325_data_tiling",
-        "time": "174.971"
-      },
-      {
-        "name": "clip_benchmark_mi325",
-        "time": "7.299"
-      },
-      {
-        "name": "punet_benchmark_mi325",
-        "time": "41.611"
-      },
-      {
-        "name": "punet_benchmark_mi325_v2",
-        "time": "41.531"
-      },
-      {
-        "name": "vae_benchmark_mi325",
-        "time": "60.075"
-      }
-    ]
-  },
-  {
     "commit_hash": "020f6bed",
     "time_unit": "ms",
     "tests": [
@@ -13996,6 +13926,76 @@
       {
         "name": "vae_benchmark_mi325",
         "time": "58.995"
+      }
+    ]
+  },
+  {
+    "commit_hash": "a4d02872",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "decode_benchmark_seq128_mi325",
+        "time": "6.426"
+      },
+      {
+        "name": "decode_benchmark_seq2048_mi325",
+        "time": "7.903"
+      },
+      {
+        "name": "prefill_benchmark_seq128_mi325",
+        "time": "29.996"
+      },
+      {
+        "name": "prefill_benchmark_seq2048_mi325",
+        "time": "254.472"
+      },
+      {
+        "name": "decode_benchmark_seq128_mi325",
+        "time": "7.028"
+      },
+      {
+        "name": "decode_benchmark_seq128_mi325_data_tiling",
+        "time": "15.362"
+      },
+      {
+        "name": "decode_benchmark_seq2048_mi325",
+        "time": "9.897"
+      },
+      {
+        "name": "decode_benchmark_seq2048_mi325_data_tiling",
+        "time": "18.426"
+      },
+      {
+        "name": "prefill_benchmark_seq128_mi325",
+        "time": "24.093"
+      },
+      {
+        "name": "prefill_benchmark_seq128_mi325_data_tiling",
+        "time": "23.042"
+      },
+      {
+        "name": "prefill_benchmark_seq2048_mi325",
+        "time": "159.244"
+      },
+      {
+        "name": "prefill_benchmark_seq2048_mi325_data_tiling",
+        "time": "172.121"
+      },
+      {
+        "name": "clip_benchmark_mi325",
+        "time": "7.299"
+      },
+      {
+        "name": "punet_benchmark_mi325",
+        "time": "41.799"
+      },
+      {
+        "name": "punet_benchmark_mi325_v2",
+        "time": "41.819"
+      },
+      {
+        "name": "vae_benchmark_mi325",
+        "time": "59.456"
       }
     ]
   }
