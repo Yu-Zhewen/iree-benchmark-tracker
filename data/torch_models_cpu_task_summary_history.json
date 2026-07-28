@@ -1,25 +1,5 @@
 [
   {
-    "commit_hash": "f4eaa7f5",
-    "time_unit": "ms",
-    "tests": [
-      {
-        "name": "clip_benchmark_cpu",
-        "time": "130.131"
-      }
-    ]
-  },
-  {
-    "commit_hash": "00593ea3",
-    "time_unit": "ms",
-    "tests": [
-      {
-        "name": "clip_benchmark_cpu",
-        "time": "130.203"
-      }
-    ]
-  },
-  {
     "commit_hash": "34ec1975",
     "time_unit": "ms",
     "tests": [
@@ -1996,6 +1976,26 @@
       {
         "name": "clip_benchmark_cpu",
         "time": "128.787"
+      }
+    ]
+  },
+  {
+    "commit_hash": "a0465a3d",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "128.919"
+      }
+    ]
+  },
+  {
+    "commit_hash": "c3ad7f4c",
+    "time_unit": "ms",
+    "tests": [
+      {
+        "name": "clip_benchmark_cpu",
+        "time": "128.920"
       }
     ]
   }
